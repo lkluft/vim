@@ -68,6 +68,9 @@ inoremap <C-t> <Esc>:tabnew<CR>
 " unhighlight search results
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+" save a root file if you forgot to sudo in the first place
+cmap w!! w !sudo tee >/dev/null %
+
 " Uncomment the following to have Vim jump to the last position when reopening a file
 " if has("autocmd")
 "     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
