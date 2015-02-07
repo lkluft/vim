@@ -23,13 +23,7 @@ endif
 syntax enable
 if has('gui_running')
     " GUI mode
-    " switch dark/light depending on time
-    let hr=strftime("%H")
-    if hr > 6 && hr < 18
-        set background=light
-    else
-        set background=dark
-    endif
+    set background=dark
 
     " function to toggle between background modes
     call togglebg#map("<F5>")
