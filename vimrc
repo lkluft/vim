@@ -76,8 +76,7 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
+" general settings
 set ignorecase      " Do case insensitive matching
 set smartcase       " Do smart case matching
 set incsearch       " Incremental search
@@ -89,6 +88,8 @@ set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
 set number          " show line numbers
 set autoread        " reload file if changed (only in GUI mode)
+set noswapfile      " prevent vim from writing .swp files
+set ruler           " show file stats in the bottom right corner
 
 " highlight tabs and trailing spaces
 set listchars=tab:>-,trail:-
