@@ -66,9 +66,9 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 cmap w!! w !sudo tee >/dev/null %
 
 " Uncomment the following to have Vim jump to the last position when reopening a file
-" if has("autocmd")
-"     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-" endif
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
