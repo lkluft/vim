@@ -115,5 +115,17 @@ set backspace=indent,eol,start
 set wildmenu
 set wildmode=list:longest,full
 
+" toggle relative line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
 " adding extensions to syntax highlighting
 au BufNewFile,BufRead *.fi set filetype=fortran
