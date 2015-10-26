@@ -77,19 +77,20 @@ if has("autocmd")
 endif
 
 " general settings
-set ignorecase      " Do case insensitive matching
-set smartcase       " Do smart case matching
-set incsearch       " Incremental search
-set hlsearch        " highlight search results
 set autoindent
+set autoread        " reload file if changed (only in GUI mode)
+set autowrite       " auto-save buffer (e.g. when using :make)
 set copyindent
+set hlsearch        " highlight search results
+set ignorecase      " Do case insensitive matching
+set incsearch       " Incremental search
 set mouse=a         " Enable mouse usage (all modes)
+set noswapfile      " prevent vim from writing .swp files
+set number          " show line numbers
+set ruler           " show file stats in the bottom right corner
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
-set number          " show line numbers
-set autoread        " reload file if changed (only in GUI mode)
-set noswapfile      " prevent vim from writing .swp files
-set ruler           " show file stats in the bottom right corner
+set smartcase       " Do smart case matching
 
 " highlight tabs and trailing spaces
 set listchars=tab:>-,trail:-
@@ -104,7 +105,6 @@ set tabstop=4       " The width of a TAB is set to 4.
                     " a width of 4.
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
-
 set shiftwidth=4    " Indents will have a width of 4
 set shiftround      " use multiple of shiftwidth when indenting with '<'
 
