@@ -80,7 +80,9 @@ endif
 set autoindent
 set autoread        " reload file if changed (only in GUI mode)
 set autowrite       " auto-save buffer (e.g. when using :make)
+set colorcolumn=+1
 set copyindent
+set expandtab       " Expand TABs to spaces
 set hlsearch        " highlight search results
 set ignorecase      " Do case insensitive matching
 set incsearch       " Incremental search
@@ -88,9 +90,14 @@ set mouse=a         " Enable mouse usage (all modes)
 set noswapfile      " prevent vim from writing .swp files
 set number          " show line numbers
 set ruler           " show file stats in the bottom right corner
+set shiftround      " use multiple of shiftwidth when indenting with '<'
+set shiftwidth=4    " Indents will have a width of 4
 set showcmd         " Show (partial) command in status line.
 set showmatch       " Show matching brackets.
 set smartcase       " Do smart case matching
+set softtabstop=4   " Sets the number of columns for a TAB
+set tabstop=4       " The width of a TAB is set to 4.
+set textwidth=80
 
 " highlight tabs and trailing spaces
 set listchars=tab:>-,trail:-
@@ -98,15 +105,6 @@ set list
 
 " highlight last inserted text
 nnoremap gV `[v`]
-
-set tabstop=4       " The width of a TAB is set to 4.
-                    " Still it is a \t. It is just that
-                    " Vim will interpret it to be having
-                    " a width of 4.
-set softtabstop=4   " Sets the number of columns for a TAB
-set expandtab       " Expand TABs to spaces
-set shiftwidth=4    " Indents will have a width of 4
-set shiftround      " use multiple of shiftwidth when indenting with '<'
 
 " using backspace to delete characters
 set backspace=indent,eol,start
@@ -127,5 +125,3 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
-" adding extensions to syntax highlighting
-au BufNewFile,BufRead *.fi set filetype=fortran
