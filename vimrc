@@ -65,53 +65,55 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " save a root file if you forgot to sudo in the first place
 cmap w!! w !sudo tee >/dev/null %
 
-" Uncomment the following to have Vim jump to the last position when reopening a file
+" highlight last inserted text
+nnoremap gV `[v`]
+
+" jump to the last position when reopening a file
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
+" load indentation rules and plugins according to the detected filetype.
 if has("autocmd")
   filetype plugin indent on
 endif
 
 " general settings
 set autoindent
-set autoread        " reload file if changed (only in GUI mode)
-set autowrite       " auto-save buffer (e.g. when using :make)
-set colorcolumn=+1
+set autoread            " reload file if changed (only in GUI mode)
+set autowrite           " auto-save buffer (e.g. when using :make)
 set copyindent
-set expandtab       " Expand TABs to spaces
-set hlsearch        " highlight search results
-set ignorecase      " Do case insensitive matching
-set incsearch       " Incremental search
-set mouse=a         " Enable mouse usage (all modes)
-set noswapfile      " prevent vim from writing .swp files
-set number          " show line numbers
-set ruler           " show file stats in the bottom right corner
-set shiftround      " use multiple of shiftwidth when indenting with '<'
-set shiftwidth=4    " Indents will have a width of 4
-set showcmd         " Show (partial) command in status line.
-set showmatch       " Show matching brackets.
-set smartcase       " Do smart case matching
-set softtabstop=4   " Sets the number of columns for a TAB
-set tabstop=4       " The width of a TAB is set to 4.
-set textwidth=80
+set expandtab           " Expand TABs to spaces
+set hlsearch            " highlight search results
+set ignorecase          " Do case insensitive matching
+set incsearch           " Incremental search
+set mouse=a             " Enable mouse usage (all modes)
+set noswapfile          " prevent vim from writing .swp files
+set number              " show line numbers
+set pastetoggle=<F2>    " disable autoindent when pasting content
+set ruler               " show file stats in the bottom right corner
+set shiftround          " use multiple of shiftwidth when indenting with '<'
+set shiftwidth=4        " Indents will have a width of 4
+set showcmd             " Show (partial) command in status line.
+set showmatch           " Show matching brackets.
+set smartcase           " Do smart case matching
+set softtabstop=4       " Sets the number of columns for a TAB
+set tabstop=4           " The width of a TAB is set to 4.
+set textwidth=80        " wrap lines after 80 columns
+set wildmenu
+set wildmode=list:longest,full
+
+" visualize textwidth with vertical bar
+if exists ("&colorcolumn")
+    set colorcolumn=+1
+endif
 
 " highlight tabs and trailing spaces
 set listchars=tab:>-,trail:-
 set list
 
-" highlight last inserted text
-nnoremap gV `[v`]
-
 " using backspace to delete characters
 set backspace=indent,eol,start
-
-" tab completition
-set wildmenu
-set wildmode=list:longest,full
 
 " toggle relative line numbers
 function! NumberToggle()
