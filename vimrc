@@ -75,6 +75,9 @@ if has("autocmd")
 
     " load indentation rules and plugins according to the detected filetype.
     filetype plugin indent on
+
+    " source .vimrc file after saving it
+    au BufWritePost $MYVIMRC source $MYVIMRC
 endif
 
 " general settings
