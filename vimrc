@@ -11,13 +11,12 @@ runtime! debian.vim
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
+    source /etc/vim/vimrc.local
 endif
 
-" Vim5 and later versions support syntax highlighting. Uncommenting the next
-" line enables syntax highlighting by default.
+" enable syntax highlighting
 if has("syntax")
-  syntax on
+    syntax on
 endif
 
 syntax enable
@@ -34,7 +33,7 @@ if has('gui_running')
     if has("gui_gtk2")
         set guifont=Monospace\ 10
     elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h14
+        set guifont=PT\ Mono:h14
     endif
 else
     " VIM in terminal
@@ -45,28 +44,6 @@ endif
 
 " colorscheme
 colorscheme solarized
-
-" tab bar color
-:hi TabLineSel  ctermfg=White   ctermbg=Black       " active label
-:hi TabLine     ctermfg=Grey    ctermbg=DarkGrey    " other labels
-:hi TabLineFill ctermfg=Black   ctermbg=DarkGrey    " rest of the bar
-
-" tab navigation
-nnoremap <S-tab> :tabprevious<CR>
-nnoremap <C-tab> :tabnext<CR>
-nnoremap <C-t> :tabnew<CR>
-inoremap <S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-tab> <Esc>:tabnext<CR>i
-inoremap <C-t> <Esc>:tabnew<CR>
-
-" unhighlight search results
-nnoremap <silent> <C-l> :nohl<CR><C-l>
-
-" save a root file if you forgot to sudo in the first place
-cmap w!! w !sudo tee >/dev/null %
-
-" highlight last inserted text
-nnoremap gV `[v`]
 
 if has("autocmd")
     " jump to the last position when reopening a file
@@ -81,14 +58,20 @@ if has("autocmd")
 endif
 
 " general settings
-set autoindent
+set autoindent          " copy indent from current when when starting a new line
 set autoread            " reload file if changed (only in GUI mode)
 set autowrite           " auto-save buffer (e.g. when using :make)
-set copyindent
+set bs=indent,eol,start " using backspace to delete characters
+if exists ("&colorcolumn")
+    set colorcolumn=+1  " visualize textwidth with vertical bar
+endif
+set copyindent          " copy existing lines indent when autoindenting
 set expandtab           " Expand TABs to spaces
 set hlsearch            " highlight search results
 set ignorecase          " Do case insensitive matching
 set incsearch           " Incremental search
+set lcs=tab:>-,trail:-  " strings to use in list mode
+set list                " enable list mode
 set mouse=a             " Enable mouse usage (all modes)
 set noswapfile          " prevent vim from writing .swp files
 set number              " show line numbers
@@ -105,26 +88,23 @@ set textwidth=80        " wrap lines after 80 columns
 set wildmenu
 set wildmode=list:longest,full
 
-" visualize textwidth with vertical bar
-if exists ("&colorcolumn")
-    set colorcolumn=+1
-endif
+" unhighlight search results
+nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-" highlight tabs and trailing spaces
-set listchars=tab:>-,trail:-
-set list
+" save a root file if you forgot to sudo in the first place
+cmap w!! w !sudo tee >/dev/null %
 
-" using backspace to delete characters
-set backspace=indent,eol,start
+" highlight last inserted text
+nnoremap gV `[v`]
 
 " toggle relative line numbers
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set norelativenumber
-    set number
-  else
-    set relativenumber
-  endif
+    if(&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set relativenumber
+    endif
 endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
