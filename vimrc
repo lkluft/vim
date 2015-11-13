@@ -14,49 +14,6 @@ if filereadable("/etc/vim/vimrc.local")
     source /etc/vim/vimrc.local
 endif
 
-" enable syntax highlighting
-if has("syntax")
-    syntax on
-endif
-
-syntax enable
-if has('gui_running')
-    " GUI mode
-    set background=dark
-
-    " function to toggle between background modes
-    call togglebg#map("<F5>")
-
-    set go-=T   " hide toolbar
-    set go-=r   " hide scrollbar
-    " different fonts on Linux/MacOS
-    if has("gui_gtk2")
-        set guifont=Monospace\ 10
-    elseif has("gui_macvim")
-        set guifont=PT\ Mono:h14
-    endif
-else
-    " VIM in terminal
-    set background=dark
-    let g:solarized_termcolors=256
-    set t_Co=256
-endif
-
-" colorscheme
-colorscheme solarized
-
-if has("autocmd")
-    " jump to the last position when reopening a file
-    au BufWinLeave ?* mkview
-    au BufWinEnter ?* silent loadview
-
-    " load indentation rules and plugins according to the detected filetype.
-    filetype plugin indent on
-
-    " source .vimrc file after saving it
-    au BufWritePost $MYVIMRC source $MYVIMRC
-endif
-
 " general settings
 set autoindent          " copy indent from current when when starting a new line
 set autoread            " reload file if changed (only in GUI mode)
@@ -67,12 +24,14 @@ if exists ("&colorcolumn")
 endif
 set copyindent          " copy existing lines indent when autoindenting
 set expandtab           " Expand TABs to spaces
+set hidden              " hide buffers instead of closing them
+set history=500         " history size
 set hlsearch            " highlight search results
-set ignorecase          " Do case insensitive matching
 set incsearch           " Incremental search
 set lcs=tab:>-,trail:-  " strings to use in list mode
 set list                " enable list mode
 set mouse=a             " Enable mouse usage (all modes)
+set nobackup            " prevent vim from writing backup files
 set noswapfile          " prevent vim from writing .swp files
 set number              " show line numbers
 set pastetoggle=<F2>    " disable autoindent when pasting content
@@ -88,14 +47,71 @@ set textwidth=80        " wrap lines after 80 columns
 set wildmenu
 set wildmode=list:longest,full
 
+" enable syntax highlighting
+if has("syntax")
+    syntax on
+    syntax enable
+endif
+
+set background=dark
+if has('gui_running')
+    " GUI mode
+    set go-=T   " hide toolbar
+    set go-=r   " hide scrollbar
+
+    " function to toggle between background modes
+    call togglebg#map("<F5>")
+
+    " different fonts on Linux/MacOS
+    if has("gui_gtk2")
+        set guifont=Monospace\ 10
+    elseif has("gui_macvim")
+        set guifont=PT\ Mono:h14
+    endif
+else
+    " VIM in terminal
+    let g:solarized_termcolors=256
+    set t_Co=256
+endif
+
+" colorscheme
+colorscheme solarized
+
+if has("autocmd")
+    " jump to the last position when reopening a file
+    au BufWinLeave ?* mkview
+    au BufWinEnter ?* silent loadview
+
+    " load indentation rules and plugins according to the detected filetype.
+    filetype plugin indent on
+
+    " equal window sizes after resizing vim
+    au VimResized * wincmd =
+
+    " source .vimrc file after saving it
+    au BufWritePost $MYVIMRC source $MYVIMRC
+endif
+
 " unhighlight search results
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nmap <silent> ,/ :nohl<CR>
 
 " save a root file if you forgot to sudo in the first place
 cmap w!! w !sudo tee >/dev/null %
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" force myself to use hjkl
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 " toggle relative line numbers
 function! NumberToggle()
