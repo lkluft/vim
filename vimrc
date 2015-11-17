@@ -19,9 +19,6 @@ set autoindent          " copy indent from current when when starting a new line
 set autoread            " reload file if changed (only in GUI mode)
 set autowrite           " auto-save buffer (e.g. when using :make)
 set bs=indent,eol,start " using backspace to delete characters
-if exists ("&colorcolumn")
-    set colorcolumn=+1  " visualize textwidth with vertical bar
-endif
 set copyindent          " copy existing lines indent when autoindenting
 set expandtab           " Expand TABs to spaces
 set hidden              " hide buffers instead of closing them
@@ -85,6 +82,12 @@ if has("autocmd")
     au BufWritePost $MYVIMRC source $MYVIMRC
 endif
 
+" force myself to use hjkl
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
 " unhighlight search results
 nmap <silent> ,/ :nohl<CR>
 
@@ -100,22 +103,16 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" force myself to use hjkl
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
 " toggle relative line numbers
 function! NumberToggle()
-    if(&relativenumber == 1)
+    if &relativenumber == 1
         set norelativenumber
         set number
     else
         set relativenumber
     endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <C-n> :call NumberToggle()<CR>
 
 " toggle background and colorscheme
 function! BackgroundToggle()
@@ -124,7 +121,7 @@ function! BackgroundToggle()
         colorscheme meta5
     else
         set background=light
-        colorscheme hemisu
+        colorscheme moria
     endif
 endfunction
 nnoremap <silent> <F5> :call BackgroundToggle()<CR>

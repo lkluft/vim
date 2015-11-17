@@ -28,6 +28,7 @@ endif
 hi Cursor         guifg=#000000 guibg=#d0d0d0 ctermfg=0 ctermbg=252
 hi NonText        guifg=#5f5fff ctermfg=63
 hi Normal         guifg=#bcbcbc guibg=#1c1c1c ctermfg=250 ctermbg=233
+set background=dark " FIX: previous line changes bg
 hi CursorLineNr   guifg=#ffff00 guibg=NONE ctermfg=11 ctermbg=NONE
 hi colorColumn    guibg=#000080 ctermbg=4
 hi Directory      guifg=#00ffff guibg=NONE ctermfg=14 ctermbg=NONE
