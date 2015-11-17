@@ -59,9 +59,6 @@ if has('gui_running')
     set go-=T   " hide toolbar
     set go-=r   " hide scrollbar
 
-    " function to toggle between background modes
-    call togglebg#map("<F5>")
-
     " different fonts on Linux/MacOS
     if has("gui_gtk2")
         set guifont=Monospace\ 10
@@ -118,6 +115,16 @@ function! NumberToggle()
         set relativenumber
     endif
 endfunc
-
 nnoremap <C-n> :call NumberToggle()<cr>
 
+" toggle background and colorscheme
+function! BackgroundToggle()
+    if &background != 'dark'
+        set background=dark
+        colorscheme meta5
+    else
+        set background=light
+        colorscheme hemisu
+    endif
+endfunction
+nnoremap <silent> <F5> :call BackgroundToggle()<CR>
