@@ -68,14 +68,10 @@ if has('gui_running')
     elseif has("gui_macvim")
         set guifont=PT\ Mono:h14
     endif
-else
-    " VIM in terminal
-    let g:solarized_termcolors=256
-    set t_Co=256
 endif
 
 " colorscheme
-colorscheme solarized
+colorscheme meta5
 
 if has("autocmd")
     " jump to the last position when reopening a file
