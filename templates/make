@@ -1,0 +1,19 @@
+CC = gcc
+CFLAGS = -g -Wall -Wextra -pedantic-errors
+NAME = 
+OBJECTS =
+
+all: $(NAME)
+
+%.o: %.c Makefile
+	$(CC) $(CFLAGS) -c $<
+
+$(NAME): $(NAME).o $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+run: $(NAME)
+	./$(NAME)
+
+clean:
+	rm *.o
+# cursor: 3 8 del
