@@ -1,5 +1,7 @@
 CC = gcc
-CFLAGS = -g -Wall -Wextra -pedantic-errors
+CFLAGS = -std=c99 -g -Wall -Wextra -pedantic -O2 -ggdb
+LIBS = -lm
+
 NAME = 
 OBJECTS =
 
@@ -9,11 +11,11 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $<
 
 $(NAME): $(NAME).o $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 run: $(NAME)
 	./$(NAME)
 
 clean:
 	rm *.o
-# cursor: 3 8 del
+# cursor: 5 del
