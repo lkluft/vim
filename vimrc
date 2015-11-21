@@ -97,6 +97,9 @@ cmap w!! w !sudo tee >/dev/null %
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" insert timestamp
+:iab <expr> dts strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")
+
 " easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
