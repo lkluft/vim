@@ -19,6 +19,7 @@ set autoindent          " copy indent from current when when starting a new line
 set autoread            " reload file if changed (only in GUI mode)
 set autowrite           " auto-save buffer (e.g. when using :make)
 set bs=indent,eol,start " using backspace to delete characters
+set cb=unnamedplus      " yank/delete to system clipboard
 set copyindent          " copy existing lines indent when autoindenting
 set expandtab           " Expand TABs to spaces
 set hidden              " hide buffers instead of closing them
@@ -43,6 +44,7 @@ set tabstop=4           " The width of a TAB is set to 4.
 set textwidth=80        " wrap lines after 80 columns
 set wildmenu
 set wildmode=list:longest,full
+setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 
 " enable syntax highlighting
 if has("syntax")
