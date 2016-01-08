@@ -15,33 +15,33 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " general settings
-set autoindent          " copy indent from current when when starting a new line
-set autoread            " reload file if changed (only in GUI mode)
-set autowrite           " auto-save buffer (e.g. when using :make)
-set bs=indent,eol,start " using backspace to delete characters
-set cb=unnamedplus      " yank/delete to system clipboard
-set copyindent          " copy existing lines indent when autoindenting
-set expandtab           " Expand TABs to spaces
-set hidden              " hide buffers instead of closing them
-set history=500         " history size
-set hlsearch            " highlight search results
-set incsearch           " Incremental search
-set lcs=tab:>-,trail:-  " strings to use in list mode
-set list                " enable list mode
-set mouse=a             " Enable mouse usage (all modes)
-set nobackup            " prevent vim from writing backup files
-set noswapfile          " prevent vim from writing .swp files
-set number              " show line numbers
-set pastetoggle=<F2>    " disable autoindent when pasting content
-set ruler               " show file stats in the bottom right corner
-set shiftround          " use multiple of shiftwidth when indenting with '<'
-set shiftwidth=4        " Indents will have a width of 4
-set showcmd             " Show (partial) command in status line.
-set showmatch           " Show matching brackets.
-set smartcase           " Do smart case matching
-set softtabstop=4       " Sets the number of columns for a TAB
-set tabstop=4           " The width of a TAB is set to 4.
-set textwidth=80        " wrap lines after 80 columns
+set autoindent              " copy indent from current when starting a new line
+set autoread                " reload file if changed (only in GUI mode)
+set autowrite               " auto-save buffer (e.g. when using :make)
+set bs=indent,eol,start     " using backspace to delete characters
+set cb^=unnamed,unnamedplus " yank/delete to system clipboard
+set copyindent              " copy existing lines indent when autoindenting
+set expandtab               " Expand TABs to spaces
+set hidden                  " hide buffers instead of closing them
+set history=500             " history size
+set hlsearch                " highlight search results
+set incsearch               " Incremental search
+set lcs=tab:>-,trail:-      " strings to use in list mode
+set list                    " enable list mode
+set mouse=a                 " Enable mouse usage (all modes)
+set nobackup                " prevent vim from writing backup files
+set noswapfile              " prevent vim from writing .swp files
+set number                  " show line numbers
+set pastetoggle=<F2>        " disable autoindent when pasting content
+set ruler                   " show file stats in the bottom right corner
+set shiftround              " use multiple of shiftwidth when indenting with '<'
+set shiftwidth=4            " Indents will have a width of 4
+set showcmd                 " Show (partial) command in status line.
+set showmatch               " Show matching brackets.
+set smartcase               " Do smart case matching
+set softtabstop=4           " Sets the number of columns for a TAB
+set tabstop=4               " The width of a TAB is set to 4.
+set textwidth=80            " wrap lines after 80 columns
 set wildmenu
 set wildmode=list:longest,full
 setglobal commentstring=#\ %s   " commentstring for undetected filetypes
