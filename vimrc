@@ -19,7 +19,7 @@ set autoindent              " copy indent from current when starting a new line
 set autoread                " reload file if changed (only in GUI mode)
 set autowrite               " auto-save buffer (e.g. when using :make)
 set bs=indent,eol,start     " using backspace to delete characters
-set cb^=unnamed,unnamedplus " yank/delete to system clipboard
+set cb=unnamed              " yank/delete to system clipboard
 set copyindent              " copy existing lines indent when autoindenting
 set expandtab               " Expand TABs to spaces
 set hidden                  " hide buffers instead of closing them
@@ -99,8 +99,9 @@ cmap w!! w !sudo tee >/dev/null %
 " highlight last inserted text
 nnoremap gV `[v`]
 
-" insert timestamp
-:iab <expr> dts strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")
+" insert timestamp in ChangeLog format
+:map <C-D> i<C-R>=strftime("%Y-%m-%d  Lukas Kluft <lukas.kluft@gmail.com>")<CR><Esc>
+:imap <C-D> <C-R>=strftime("%Y-%m-%d  Lukas Kluft <lukas.kluft@gmail.com>")<CR>
 
 " easy window navigation
 map <C-h> <C-w>h
