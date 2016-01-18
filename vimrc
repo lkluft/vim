@@ -100,8 +100,10 @@ cmap w!! w !sudo tee >/dev/null %
 nnoremap gV `[v`]
 
 " insert timestamp in ChangeLog format
-:map <C-D> i<C-R>=strftime("%Y-%m-%d  Lukas Kluft <lukas.kluft@gmail.com>")<CR><Esc>
-:imap <C-D> <C-R>=strftime("%Y-%m-%d  Lukas Kluft <lukas.kluft@gmail.com>")<CR>
+:map <C-D> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft <lukas.kluft@gmail.com>")<CR><Esc>j0
+
+" add 'x <timestamp>  ' to the beginning of line (tick watched movies)
+:map <C-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
 
 " easy window navigation
 map <C-h> <C-w>h
