@@ -16,6 +16,7 @@ endif
 
 " general settings
 set autoindent              " copy indent from current when starting a new line
+set autochdir               " change working directory to location of current file
 set autoread                " reload file if changed (only in GUI mode)
 set autowrite               " auto-save buffer (e.g. when using :make)
 set bs=indent,eol,start     " using backspace to delete characters
@@ -41,6 +42,7 @@ set showmatch               " Show matching brackets.
 set smartcase               " Do smart case matching
 set softtabstop=4           " Sets the number of columns for a TAB
 set tabstop=4               " The width of a TAB is set to 4.
+set tags=tags;              " Search parent directories for tags file
 set textwidth=80            " wrap lines after 80 columns
 set wildmenu
 set wildmode=list:longest,full
