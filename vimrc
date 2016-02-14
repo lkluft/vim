@@ -69,7 +69,7 @@ if has('gui_running')
 endif
 
 " colorscheme
-colorscheme meta5
+colorscheme mojave
 
 if has("autocmd")
     " jump to the last position when reopening a file
@@ -86,11 +86,11 @@ if has("autocmd")
     au BufWritePost $MYVIMRC source $MYVIMRC
 endif
 
-" force myself to use hjkl
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" " force myself to use hjkl
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 " unhighlight search results
 nmap <silent> ,/ :nohl<CR>
@@ -128,7 +128,7 @@ nnoremap <C-n> :call NumberToggle()<CR>
 function! BackgroundToggle()
     if &background != 'dark'
         set background=dark
-        colorscheme meta5
+        colorscheme mojave
     else
         set background=light
         colorscheme moria
