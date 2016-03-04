@@ -35,6 +35,7 @@ set noswapfile              " prevent vim from writing .swp files
 set number                  " show line numbers
 set pastetoggle=<F2>        " disable autoindent when pasting content
 set ruler                   " show file stats in the bottom right corner
+set scrolloff=5             " show lines around cursor position
 set shiftround              " use multiple of shiftwidth when indenting with '<'
 set shiftwidth=4            " Indents will have a width of 4
 set showcmd                 " Show (partial) command in status line.
@@ -112,6 +113,16 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" catch common spelling mistakes
+cnoreabbrev Q q
+cnoreabbrev Q! q!
+cnoreabbrev W w
+cnoreabbrev W! w!
+cnoreabbrev WQ wq
+cnoreabbrev Wa wa
+cnoreabbrev Wq wq
+cnoreabbrev wQ wq
 
 " toggle relative line numbers
 function! NumberToggle()
