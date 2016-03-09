@@ -23,6 +23,8 @@ set bs=indent,eol,start     " using backspace to delete characters
 set cb=unnamed              " yank/delete to system clipboard
 set copyindent              " copy existing lines indent when autoindenting
 set expandtab               " Expand TABs to spaces
+set foldmethod=indent       " use indented blocks to recognize fold ranges
+set foldlevel=99            " do not fold anything when opening a file
 set hidden                  " hide buffers instead of closing them
 set history=500             " history size
 set hlsearch                " highlight search results
@@ -146,3 +148,13 @@ function! BackgroundToggle()
     endif
 endfunction
 nnoremap <silent> <F5> :call BackgroundToggle()<CR>
+
+" toggle all foldings
+function! FoldToggle()
+    if &foldlevel == 99
+        set foldlevel=0
+    else
+        set foldlevel=99
+    endif
+endfunction
+nnoremap <silent> zz :call FoldToggle()<CR>
