@@ -15,23 +15,23 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " general settings
-set autoindent              " copy indent from current when starting a new line
 set autochdir               " change working directory to location of current file
+set autoindent              " copy indent from current when starting a new line
 set autoread                " reload file if changed (only in GUI mode)
 set autowrite               " auto-save buffer (e.g. when using :make)
 set bs=indent,eol,start     " using backspace to delete characters
 set cb=unnamed              " yank/delete to system clipboard
 set copyindent              " copy existing lines indent when autoindenting
-set expandtab               " Expand TABs to spaces
-set foldmethod=indent       " use indented blocks to recognize fold ranges
+set expandtab               " expand TABs to spaces
 set foldlevel=99            " do not fold anything when opening a file
+set foldmethod=indent       " use indented blocks to recognize fold ranges
 set hidden                  " hide buffers instead of closing them
 set history=500             " history size
 set hlsearch                " highlight search results
-set incsearch               " Incremental search
+set incsearch               " incremental search
 set lcs=tab:>-,trail:-      " strings to use in list mode
 set list                    " enable list mode
-set mouse=a                 " Enable mouse usage (all modes)
+set mouse=a                 " enable mouse usage (all modes)
 set nobackup                " prevent vim from writing backup files
 set noswapfile              " prevent vim from writing .swp files
 set number                  " show line numbers
@@ -39,14 +39,15 @@ set pastetoggle=<F2>        " disable autoindent when pasting content
 set ruler                   " show file stats in the bottom right corner
 set scrolloff=5             " show lines around cursor position
 set shiftround              " use multiple of shiftwidth when indenting with '<'
-set shiftwidth=4            " Indents will have a width of 4
-set showcmd                 " Show (partial) command in status line.
-set showmatch               " Show matching brackets.
-set smartcase               " Do smart case matching
-set softtabstop=4           " Sets the number of columns for a TAB
-set tabstop=4               " The width of a TAB is set to 4.
-set tags=tags;              " Search parent directories for tags file
-set textwidth=80            " wrap lines after 80 columns
+set shiftwidth=4            " indents will have a width of 4
+set showcmd                 " show (partial) command in status line.
+set showmatch               " show matching brackets.
+set smartcase               " do smart case matching
+set softtabstop=4           " sets the number of columns for a TAB
+set tabstop=4               " the width of a TAB is set to 4.
+set tags=tags;              " search parent directories for tags file
+set textwidth=79            " wrap lines after 80 columns
+set virtualedit=onemore     " allow for cursor behind last character
 set wildmenu
 set wildmode=list:longest,full
 setglobal commentstring=#\ %s   " commentstring for undetected filetypes
@@ -55,6 +56,7 @@ setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 if has("syntax")
     syntax on
     syntax enable
+    colorscheme mojave
 endif
 
 set background=dark
@@ -71,13 +73,10 @@ if has('gui_running')
     endif
 endif
 
-" colorscheme
-colorscheme mojave
-
 if has("autocmd")
     " jump to the last position when reopening a file
     au BufWinLeave ?* mkview
-    au BufWinEnter ?* silent loadview
+    au BufWinEnter ?* silent loadview | source $MYVIMRC
 
     " load indentation rules and plugins according to the detected filetype.
     filetype plugin indent on
@@ -89,12 +88,6 @@ if has("autocmd")
     au BufWritePost $MYVIMRC source $MYVIMRC
 endif
 
-" " force myself to use hjkl
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
-
 " unhighlight search results
 nmap <silent> ,/ :nohl<CR>
 
@@ -104,27 +97,31 @@ cmap w!! w !sudo tee >/dev/null %
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" yank from cursor to the end of the line
+nnoremap Y y$
+
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+" Allow using the repeat operator with a visual selection (!)
+" http://stackoverflow.com/a/8064607/127816
+vnoremap . :normal .<CR>
+
+" re-format Python block comments (72 column widths following PEP8)
+nmap gqb :set textwidth=72<CR>vipgq :set textwidth=79<CR>
+
 " insert timestamp in ChangeLog format
-:map <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
+map <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
 
 " add 'x <timestamp>  ' to the beginning of line (tick watched movies)
-:map <S-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
+map <S-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
 
 " easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" catch common spelling mistakes
-cnoreabbrev Q q
-cnoreabbrev Q! q!
-cnoreabbrev W w
-cnoreabbrev W! w!
-cnoreabbrev WQ wq
-cnoreabbrev Wa wa
-cnoreabbrev Wq wq
-cnoreabbrev wQ wq
 
 " toggle relative line numbers
 function! NumberToggle()
