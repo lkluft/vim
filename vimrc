@@ -47,6 +47,8 @@ set softtabstop=4           " sets the number of columns for a TAB
 set tabstop=4               " the width of a TAB is set to 4.
 set tags=tags;              " search parent directories for tags file
 set textwidth=79            " wrap lines after 80 columns
+set undofile                " store undos to a file for persistent usage
+set undodir=$HOME/.vim/undo " directory where the undofiles are stored
 set virtualedit=onemore     " allow for cursor behind last character
 set wildmenu
 set wildmode=list:longest,full
@@ -110,6 +112,9 @@ vnoremap . :normal .<CR>
 
 " re-format Python block comments (72 column widths following PEP8)
 nmap gqb :set textwidth=72<CR>vipgq :set textwidth=79<CR>
+
+" undo all changes since last file write
+map <silent> <S-U> :earlier 1f<CR>
 
 " insert timestamp in ChangeLog format
 map <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
