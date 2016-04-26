@@ -78,7 +78,7 @@ endif
 if has("autocmd")
     " jump to the last position when reopening a file
     au BufWinLeave ?* mkview
-    au BufWinEnter ?* silent loadview | source $MYVIMRC
+    au BufWinEnter ?* silent loadview
 
     " load indentation rules and plugins according to the detected filetype.
     filetype plugin indent on
