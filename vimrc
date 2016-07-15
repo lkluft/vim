@@ -15,6 +15,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " load bundles (pathogen)
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " general settings
