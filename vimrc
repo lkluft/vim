@@ -160,3 +160,6 @@ function! FoldToggle()
     endif
 endfunction
 nnoremap <silent> zz :call FoldToggle()<CR>
+
+" load bundles
+execute pathogen#infect()

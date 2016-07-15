@@ -1,9 +1,0 @@
-program main
-    implicit none
-    integer ::
-    real ::
-
-    
-
-end program main
-# cursor: 6 del
