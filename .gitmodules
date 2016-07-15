@@ -7,3 +7,6 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "bundle/vim-sort-motion"]
+	path = bundle/vim-sort-motion
+	url = https://github.com/christoomey/vim-sort-motion
