@@ -14,6 +14,9 @@ if filereadable("/etc/vim/vimrc.local")
     source /etc/vim/vimrc.local
 endif
 
+" load bundles (pathogen)
+execute pathogen#infect()
+
 " general settings
 set autochdir               " change working directory to location of current file
 set autoindent              " copy indent from current when starting a new line
@@ -160,6 +163,3 @@ function! FoldToggle()
     endif
 endfunction
 nnoremap <silent> zz :call FoldToggle()<CR>
-
-" load bundles
-execute pathogen#infect()
