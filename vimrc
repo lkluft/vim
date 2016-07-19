@@ -56,6 +56,7 @@ set undodir=$HOME/.vim/undo " directory where the undofiles are stored
 set virtualedit=onemore     " allow for cursor behind last character
 set wildmenu
 set wildmode=list:longest,full
+set wildignore=*/t7data/*
 setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 
 " enable syntax highlighting
@@ -89,6 +90,9 @@ if has("autocmd")
 
     " equal window sizes after resizing vim
     au VimResized * wincmd =
+
+    " use autopep8 to correct python files.
+    au FileType python setlocal formatprg=autopep8\ -
 
     " source .vimrc file after saving it
     au BufWritePost $MYVIMRC source $MYVIMRC
@@ -131,6 +135,12 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" ctrlp settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_extensions = ['tags']
 
 " toggle relative line numbers
 function! NumberToggle()
