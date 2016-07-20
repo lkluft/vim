@@ -142,6 +142,10 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_extensions = ['tags']
 
+" variables used by file templates
+let g:user = 'Lukas Kluft'
+let g:email = 'lukas.kluft@gmail.com'
+
 " toggle relative line numbers
 function! NumberToggle()
     if &relativenumber == 1

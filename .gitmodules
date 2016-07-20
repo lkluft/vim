@@ -31,3 +31,6 @@
 [submodule "bundle/vim-textobj-python"]
 	path = bundle/vim-textobj-python
 	url = https://github.com/bps/vim-textobj-python
+[submodule "bundle/vim-textobj-variable-segment"]
+	path = bundle/vim-textobj-variable-segment
+	url = https://github.com/Julian/vim-textobj-variable-segment
