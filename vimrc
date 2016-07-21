@@ -145,6 +145,7 @@ let g:ctrlp_extensions = ['tags']
 " variables used by file templates
 let g:user = 'Lukas Kluft'
 let g:email = 'lukas.kluft@gmail.com'
+let g:templates_directory = '~/.vim/templates'
 
 " toggle relative line numbers
 function! NumberToggle()
