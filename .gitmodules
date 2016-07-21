@@ -1,36 +1,48 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+	ignore = dirty
 [submodule "bundle/vim-repeat"]
 	path = bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
+	ignore = dirty
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+	ignore = dirty
 [submodule "bundle/vim-sort-motion"]
 	path = bundle/vim-sort-motion
 	url = https://github.com/christoomey/vim-sort-motion
+	ignore = dirty
 [submodule "bundle/vim-textobj-user"]
 	path = bundle/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user
+	ignore = dirty
 [submodule "bundle/vim-textobj-indent"]
 	path = bundle/vim-textobj-indent
 	url = https://github.com/kana/vim-textobj-indent
+	ignore = dirty
 [submodule "bundle/vim-template"]
 	path = bundle/vim-template
 	url = https://github.com/aperezdc/vim-template/
+	ignore = dirty
 [submodule "bundle/SearchComplete"]
 	path = bundle/SearchComplete
 	url = https://github.com/vim-scripts/SearchComplete
+	ignore = dirty
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
+	ignore = dirty
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+	ignore = dirty
 [submodule "bundle/vim-textobj-python"]
 	path = bundle/vim-textobj-python
 	url = https://github.com/bps/vim-textobj-python
+	ignore = dirty
 [submodule "bundle/vim-textobj-variable-segment"]
 	path = bundle/vim-textobj-variable-segment
 	url = https://github.com/Julian/vim-textobj-variable-segment
+	ignore = dirty

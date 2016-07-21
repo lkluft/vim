@@ -17,6 +17,7 @@ endif
 " load bundles (pathogen)
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+Helptags
 
 " general settings
 set autochdir               " change working directory to location of current file
