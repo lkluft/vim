@@ -64,7 +64,7 @@ setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 if has("syntax")
     syntax on
     syntax enable
-    colorscheme mojave
+    colorscheme base
 endif
 
 set background=dark
@@ -163,7 +163,7 @@ nnoremap <C-n> :call NumberToggle()<CR>
 function! BackgroundToggle()
     if &background != 'dark'
         set background=dark
-        colorscheme mojave
+        colorscheme base
     else
         set background=light
         colorscheme moria
