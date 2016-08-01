@@ -164,9 +164,11 @@ function! BackgroundToggle()
     if &background != 'dark'
         set background=dark
         colorscheme base
+        set background=dark
     else
         set background=light
         colorscheme moria
+        set background=light
     endif
 endfunction
 nnoremap <silent> <F5> :call BackgroundToggle()<CR>
