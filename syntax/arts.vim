@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: ARTS
 " Maintainer: via update-vim-arts-syntax script
-" Latest Revision: Mon May 2 12:10:48 CEST 2016
+" Latest Revision: Thu Jul 21 15:13:20 CEST 2016
 if exists("b:current_syntax")
   finish
 endif
