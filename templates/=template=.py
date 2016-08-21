@@ -7,12 +7,3 @@
 """
 %HERE%
 """
-
-import os
-import sys
-
-import numpy as np
-import maptlotlib.pyplot as plt
-
-
-

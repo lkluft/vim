@@ -131,6 +131,9 @@ map <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><
 " add 'x <timestamp>  ' to the beginning of line (tick watched movies)
 map <S-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
 
+" map jk to Escape
+imap jk <Esc>
+
 " easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
