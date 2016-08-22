@@ -100,7 +100,7 @@ if has("autocmd")
 endif
 
 " unhighlight search results
-nmap <silent> ,/ :nohl<CR>
+nnoremap <silent> ,/ :nohl<CR>
 
 " save a root file if you forgot to sudo in the first place
 cmap w!! w !sudo tee >/dev/null %
@@ -120,19 +120,19 @@ vnoremap > >gv
 vnoremap . :normal .<CR>
 
 " re-format Python block comments (72 column widths following PEP8)
-nmap gqb :set textwidth=72<CR>vipgq :set textwidth=79<CR>
+nnoremap gqb :set textwidth=72<CR>vipgq :set textwidth=79<CR>
 
 " undo all changes since last file write
-map <silent> <S-U> :earlier 1f<CR>
+noremap <silent> <S-U> :earlier 1f<CR>
 
 " insert timestamp in ChangeLog format
-map <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
+noremap <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
 
 " add 'x <timestamp>  ' to the beginning of line (tick watched movies)
-map <S-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
+noremap <S-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
 
 " map jk to Escape
-imap jk <Esc>
+inoremap jk <Esc>
 
 " easy window navigation
 map <C-h> <C-w>h
