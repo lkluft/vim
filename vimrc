@@ -52,8 +52,8 @@ set softtabstop=4           " sets the number of columns for a TAB
 set tabstop=4               " the width of a TAB is set to 4.
 set tags=tags;              " search parent directories for tags file
 set textwidth=79            " wrap lines after 80 columns
-set undofile                " store undos to a file for persistent usage
-set undodir=$HOME/.vim/undo " directory where the undofiles are stored
+" set undofile                " store undos to a file for persistent usage
+" set undodir=$HOME/.vim/undo " directory where the undofiles are stored
 set virtualedit=onemore     " allow for cursor behind last character
 set wildmenu
 set wildmode=list:longest,full
@@ -64,7 +64,7 @@ setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 if has("syntax")
     syntax on
     syntax enable
-    colorscheme base
+    colorscheme moria
 endif
 
 set background=dark
@@ -152,15 +152,15 @@ let g:email = 'lukas.kluft@gmail.com'
 let g:templates_directory = '~/.vim/templates'
 
 " syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_options = ['--jobs=4']
 
 " toggle relative line numbers
 function! NumberToggle()
