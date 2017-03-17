@@ -26,6 +26,7 @@ set autoread                " reload file if changed (only in GUI mode)
 set autowrite               " auto-save buffer (e.g. when using :make)
 set bs=indent,eol,start     " using backspace to delete characters
 set cb=unnamed              " yank/delete to system clipboard
+set colorcolumn=+1          " indicate textwidth
 set copyindent              " copy existing lines indent when autoindenting
 set expandtab               " expand TABs to spaces
 set foldlevel=99            " do not fold anything when opening a file
@@ -94,6 +95,9 @@ if has("autocmd")
 
     " use autopep8 to correct python files.
     au FileType python setlocal formatprg=autopep8\ -
+
+    " set textwidth to 72 for commits.
+    au FileType gitcommit,svn setlocal textwidth=72
 
     " source .vimrc file after saving it
     au BufWritePost $MYVIMRC source $MYVIMRC
