@@ -97,7 +97,7 @@ if has("autocmd")
     au FileType python setlocal formatprg=autopep8\ -
 
     " set textwidth (72) and tabstop (8) for commits.
-    au FileType changelog,gitcommit,svn setlocal textwidth=72 tabstop=8
+    au FileType changelog,gitcommit,svn setlocal tw=72 ts=8 sw=8
 
     " source .vimrc file after saving it
     au BufWritePost $MYVIMRC source $MYVIMRC
