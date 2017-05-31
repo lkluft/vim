@@ -65,10 +65,9 @@ setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 if has("syntax")
     syntax on
     syntax enable
-    colorscheme moria
+    colorscheme Monokai
 endif
 
-set background=dark
 if has('gui_running')
     " GUI mode
     set go-=T   " hide toolbar
@@ -181,11 +180,11 @@ nnoremap <C-n> :call NumberToggle()<CR>
 function! BackgroundToggle()
     if &background != 'dark'
         set background=dark
-        colorscheme base
+        colorscheme Monokai
         set background=dark
     else
         set background=light
-        colorscheme moria
+        colorscheme github
         set background=light
     endif
 endfunction
