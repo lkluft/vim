@@ -45,9 +45,6 @@
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
-[submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim
 [submodule "bundle/lexima.vim"]
 	path = bundle/lexima.vim
 	url = https://github.com/cohama/lexima.vim
