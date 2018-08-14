@@ -143,12 +143,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" ctrlp settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_extensions = ['tags']
-
 " variables used by file templates
 let g:user = 'Lukas Kluft'
 let g:email = 'lukas.kluft@gmail.com'
