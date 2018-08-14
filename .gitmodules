@@ -48,9 +48,6 @@
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
-[submodule "bundle/syntatstic"]
-	path = bundle/syntatstic
-	url = https://github.com/scrooloose/syntastic
 [submodule "bundle/lexima.vim"]
 	path = bundle/lexima.vim
 	url = https://github.com/cohama/lexima.vim
