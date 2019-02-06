@@ -50,6 +50,8 @@ set showcmd                 " show (partial) command in status line.
 set showmatch               " show matching brackets.
 set smartcase               " do smart case matching
 set softtabstop=4           " sets the number of columns for a TAB
+set splitbelow              " open new horizontal split panes below
+set splitright              " open new vertical split panels right
 set tabstop=4               " the width of a TAB is set to 4.
 set tags=tags;              " search parent directories for tags file
 set textwidth=79            " wrap lines after 80 columns
