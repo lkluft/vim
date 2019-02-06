@@ -147,21 +147,6 @@ let g:user = 'Lukas Kluft'
 let g:email = 'lukas.kluft@gmail.com'
 let g:templates_directory = '~/.vim/templates'
 
-
-" toggle background and colorscheme
-function! BackgroundToggle()
-    if &background != 'dark'
-        set background=dark
-        colorscheme Monokai
-        set background=dark
-    else
-        set background=light
-        colorscheme github
-        set background=light
-    endif
-endfunction
-nnoremap <silent> <F5> :call BackgroundToggle()<CR>
-
 " toggle all foldings
 function! FoldToggle()
     if &foldlevel == 99
