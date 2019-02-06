@@ -147,16 +147,6 @@ let g:user = 'Lukas Kluft'
 let g:email = 'lukas.kluft@gmail.com'
 let g:templates_directory = '~/.vim/templates'
 
-" toggle relative line numbers
-function! NumberToggle()
-    if &relativenumber == 1
-        set norelativenumber
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<CR>
 
 " toggle background and colorscheme
 function! BackgroundToggle()
