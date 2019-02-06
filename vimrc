@@ -131,10 +131,7 @@ nnoremap gqb :set textwidth=72<CR>vipgq :set textwidth=79<CR>
 noremap <silent> <S-U> :earlier 1f<CR>
 
 " insert timestamp in ChangeLog format
-noremap <S-t> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
-
-" add 'x <timestamp>  ' to the beginning of line (tick watched movies)
-noremap <S-x> I<C-R>=strftime("x %Y-%m-%d  ")<CR><Esc>
+noremap <F3> O<C-R>=strftime("%Y-%m-%d  Lukas Kluft  <lukas.kluft@gmail.com>")<CR><Esc>j0
 
 " map jk to Escape
 inoremap jk <Esc>
