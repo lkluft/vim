@@ -41,7 +41,7 @@ set mouse=a                 " enable mouse usage (all modes)
 set nobackup                " prevent vim from writing backup files
 set noswapfile              " prevent vim from writing .swp files
 set number                  " show line numbers
-set pastetoggle=<F2>        " disable autoindent when pasting content
+set paste                   " disable autoindent when pasting content
 set ruler                   " show file stats in the bottom right corner
 set scrolloff=5             " show lines around cursor position
 set shiftround              " use multiple of shiftwidth when indenting with '<'
