@@ -56,9 +56,6 @@ set tabstop=4               " the width of a TAB is set to 4.
 set tags=tags;              " search parent directories for tags file
 set textwidth=79            " wrap lines after 80 columns
 set virtualedit=onemore     " allow for cursor behind last character
-set wildmenu
-set wildmode=list:longest,full
-set wildignore=*/t7data/*
 setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 
 " enable syntax highlighting
