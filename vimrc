@@ -55,8 +55,6 @@ set splitright              " open new vertical split panels right
 set tabstop=4               " the width of a TAB is set to 4.
 set tags=tags;              " search parent directories for tags file
 set textwidth=79            " wrap lines after 80 columns
-" set undofile                " store undos to a file for persistent usage
-" set undodir=$HOME/.vim/undo " directory where the undofiles are stored
 set virtualedit=onemore     " allow for cursor behind last character
 set wildmenu
 set wildmode=list:longest,full
