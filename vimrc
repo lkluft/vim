@@ -54,7 +54,6 @@ set splitbelow              " open new horizontal split panes below
 set splitright              " open new vertical split panels right
 set tabstop=4               " the width of a TAB is set to 4.
 set tags=tags;              " search parent directories for tags file
-set textwidth=79            " wrap lines after 80 columns
 set virtualedit=onemore     " allow for cursor behind last character
 setglobal commentstring=#\ %s   " commentstring for undetected filetypes
 
